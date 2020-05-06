@@ -2,6 +2,8 @@
 
 #define BOARD_H
 
-void print_chess(char[8][8]);
+void PrintChess(char**);
+char** FreeChess(char**);
+char** FillChess(char**);
 
 #endif

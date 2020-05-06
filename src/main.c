@@ -1,18 +1,34 @@
-#include "board.h"
 #include "board.c"
+#include "board.h"
+#include "movement.c"
+#include "movement.h"
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
-    char chess[8][8] = {{'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'},
-                        {'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'},
-                        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                        {'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'},
-                        {'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'}};
-    print_chess(chess);
+    char color = 'w';
+    int exit = 0;
+    char** chess = NULL;
+    chess = FillChess(chess);
+    while (1) {
+        PrintChess(chess);
+        printf("\nfor exit enter 1\n");
+        scanf("%d", &exit);
+        if (exit == 1) {
+            break;
+        }
+        if (color == 'w') {
+            printf("\nwhite:\n");
+            chess = EnterCoordinate(chess, color);
+            color = 'b';
+        } else {
+            printf("\nblack:\n");
+            chess = EnterCoordinate(chess, color);
+            color = 'w';
+        }
+    }
+    chess = FreeChess(chess);
     return 0;
 }
