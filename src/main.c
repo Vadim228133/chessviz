@@ -1,18 +1,7 @@
-#include <iostream>
+#include "board.h"
+#include "board.c"
 
-using namespace std;
-
-void print_chess(char chess[8][8])
-{
-    for (short int i = 0; i < 8; i++) {
-        cout << i + 1 << " ";
-        for (short int j = 0; j < 8; j++) {
-            cout << "{ " << chess[i][j] << " }";
-        }
-        cout << endl;
-    }
-    cout << "    a    b    c    d    e    f    g    h" << endl;
-}
+#include <stdio.h>
 
 int main()
 {
