@@ -6,7 +6,7 @@
 void PrintChess(char** chess)
 {
     for (int i = 0; i < 8; i++) {
-        printf("%d ", i);
+        printf("%d ", i + 1);
         for (int j = 0; j < 8; j++) {
             printf("{ %c }", chess[i][j]);
         }
@@ -36,7 +36,7 @@ char** FillChess(char** chess)
     chess[0][5] = 'b';
     chess[0][6] = 'n';
     chess[0][7] = 'r';
-    chess[0][0] = 'R';
+    chess[7][0] = 'R';
     chess[7][1] = 'N';
     chess[7][2] = 'B';
     chess[7][3] = 'Q';
