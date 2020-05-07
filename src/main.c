@@ -1,10 +1,7 @@
-#include "board.c"
 #include "board.h"
-#include "movement.c"
 #include "movement.h"
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main()
 {

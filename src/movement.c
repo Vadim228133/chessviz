@@ -38,19 +38,14 @@ int Check(char** chess, char oper, char color, int x1, int y1, int x2, int y2)
         if (chess[x1][y1] > 'Z') {
             return -1;
         }
-        if ((oper == 'x')
-            && ((chess[x2][y2] < 'a')
-                || chess[x2][y2]
-                        == ' ')) {
+        if ((oper == 'x') && ((chess[x2][y2] < 'a') || chess[x2][y2] == ' ')) {
             return -1;
         }
     } else {
         if (chess[x1][y1] < 'a') {
             return -1;
         }
-        if ((oper == 'x')
-            && ((chess[x2][y2] > 'Z')
-                || chess[x2][y2] == ' ')) {
+        if ((oper == 'x') && ((chess[x2][y2] > 'Z') || chess[x2][y2] == ' ')) {
             return -1;
         }
     }
@@ -89,8 +84,7 @@ int StepPawn(
                 if (x2 != 4) {
                     return -1;
                 }
-                if(chess[5][y1]!=' ')
-                {
+                if (chess[5][y1] != ' ') {
                     return -1;
                 }
             }
@@ -116,8 +110,7 @@ int StepPawn(
                 if (x2 != 3) {
                     return -1;
                 }
-                if(chess[2][y1]!=' ')
-                {
+                if (chess[2][y1] != ' ') {
                     return -1;
                 }
             }
